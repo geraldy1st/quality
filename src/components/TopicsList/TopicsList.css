@@ -1,0 +1,40 @@
+.topics-list {
+  margin-top: 1rem;
+}
+
+.topics-list h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.topics-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.topics-list li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.topics-list li:last-child {
+  border-bottom: none;
+}
+
+.topics-list a {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: block;
+}
+
+.topics-list a:hover {
+  color: #3498db;
+}
+
+.topics-list .active {
+  color: #3498db;
+  font-weight: bold;
+}
