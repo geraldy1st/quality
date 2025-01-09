@@ -1,0 +1,69 @@
+.settings-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.settings-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.settings-card h2 {
+  color: #202124;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.settings-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #dadce0;
+}
+
+.settings-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.settings-section h3 {
+  color: #202124;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.settings-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0;
+}
+
+.settings-option label {
+  color: #5f6368;
+  font-size: 0.9rem;
+}
+
+.settings-option select {
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--input-background);
+  color: var(--text-color);
+}
+
+.settings-option select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.settings-option input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  accent-color: var(--primary-color);
+}

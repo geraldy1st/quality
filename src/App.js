@@ -10,53 +10,65 @@ import { AuthProvider } from "./context/AuthContext";
 import Login from "./components/Auth/Login";
 import Register from "./components/Auth/Register";
 import PrivateRoute from "./components/PrivateRoute";
+import Settings from "./pages/Settings/Settings";
+import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
   return (
     <AuthProvider>
-      <ProgressProvider>
-        <Router>
-          <div className="App">
-            <Header />
-            <Routes>
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route
-                path="/"
-                element={
-                  <PrivateRoute>
-                    <Home />
-                  </PrivateRoute>
-                }
-              />
-              <Route
-                path="/profile"
-                element={
-                  <PrivateRoute>
-                    <Profile />
-                  </PrivateRoute>
-                }
-              />
-              <Route
-                path="/quiz"
-                element={
-                  <PrivateRoute>
-                    <Quiz />
-                  </PrivateRoute>
-                }
-              />
-              <Route
-                path="/learning"
-                element={
-                  <PrivateRoute>
-                    <Learning />
-                  </PrivateRoute>
-                }
-              />
-            </Routes>
-          </div>
-        </Router>
-      </ProgressProvider>
+      <ThemeProvider>
+        <ProgressProvider>
+          <Router>
+            <div className="App">
+              <Header />
+              <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route
+                  path="/"
+                  element={
+                    <PrivateRoute>
+                      <Home />
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  path="/profile"
+                  element={
+                    <PrivateRoute>
+                      <Profile />
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  path="/quiz"
+                  element={
+                    <PrivateRoute>
+                      <Quiz />
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  path="/learning"
+                  element={
+                    <PrivateRoute>
+                      <Learning />
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  path="/settings"
+                  element={
+                    <PrivateRoute>
+                      <Settings />
+                    </PrivateRoute>
+                  }
+                />
+              </Routes>
+            </div>
+          </Router>
+        </ProgressProvider>
+      </ThemeProvider>
     </AuthProvider>
   );
 }

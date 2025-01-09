@@ -4,16 +4,137 @@
   box-sizing: border-box;
 }
 
+:root[data-theme="light"] {
+  --background-color: #ffffff;
+  --text-color: #202124;
+  --secondary-text: #5f6368;
+  --border-color: #dadce0;
+  --card-background: #ffffff;
+  --hover-background: #f8f9fa;
+  --primary-color: #1a73e8;
+  --primary-hover: #1557b0;
+  --error-color: #dc3545;
+  --success-color: #28a745;
+  --header-shadow: rgba(0, 0, 0, 0.1);
+  --input-background: white;
+  --input-text: #202124;
+  --checkbox-bg: white;
+  --disabled-text: #70757a;
+  --disabled-bg: #f1f3f4;
+}
+
+:root[data-theme="dark"] {
+  --background-color: #202124;
+  --text-color: #e8eaed;
+  --secondary-text: #9aa0a6;
+  --border-color: #3c4043;
+  --card-background: #292a2d;
+  --hover-background: #3c4043;
+  --primary-color: #8ab4f8;
+  --primary-hover: #aecbfa;
+  --error-color: #f28b82;
+  --success-color: #81c995;
+  --header-shadow: rgba(0, 0, 0, 0.3);
+  --input-background: #202124;
+  --input-text: #e8eaed;
+  --checkbox-bg: #3c4043;
+  --disabled-text: #9aa0a6;
+  --disabled-bg: #303134;
+}
+
 body {
   font-family: "Google Sans", Roboto, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8f9fa;
-  color: #202124;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .App {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.settings-card,
+.profile-card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+}
+
+.settings-card h2,
+.settings-section h3 {
+  color: var(--text-color);
+}
+
+.settings-option label {
+  color: var(--secondary-text);
+}
+
+.settings-option select {
+  background-color: var(--card-background);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+/* Styles globaux pour les inputs */
+input,
+select,
+textarea {
+  background-color: var(--input-background);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* Styles pour les cartes et conteneurs */
+.card,
+.container {
+  background-color: var(--card-background);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+/* Styles pour les liens */
+a {
+  color: var(--primary-color);
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+/* Styles pour les titres */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-color);
+}
+
+/* Styles pour le texte secondaire */
+.text-secondary {
+  color: var(--secondary-text);
+}
+
+/* Styles globaux pour les éléments désactivés */
+.disabled,
+:disabled {
+  background-color: var(--disabled-bg);
+  color: var(--disabled-text);
+  cursor: not-allowed;
+}
+
+/* Styles pour les checkboxes */
+input[type="checkbox"] {
+  accent-color: var(--primary-color);
+  background-color: var(--checkbox-bg);
 }

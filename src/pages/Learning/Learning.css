@@ -4,19 +4,26 @@
   padding: 2rem;
 }
 
+.learning-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
 .learning-header {
-  text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .learning-header h1 {
-  color: #2c3e50;
+  color: var(--text-color);
+  font-size: 2rem;
+  font-weight: 400;
   margin-bottom: 1rem;
 }
 
 .learning-header p {
-  color: #666;
-  font-size: 1.1rem;
+  color: var(--secondary-text);
+  font-size: 1rem;
 }
 
 .chapters-grid {

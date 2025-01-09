@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
+import SettingsIcon from "@mui/icons-material/Settings";
 import "./Header.css";
 
 const Header = () => {
   const { user, logout } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogout = async () => {
     try {
@@ -49,20 +51,22 @@ const Header = () => {
       </Link>
       {user && (
         <div className="user-menu">
-          <div className="user-info">
+          <Link to="/settings" className="settings-link" title="Paramètres">
+            <SettingsIcon />
+          </Link>
+          <Link to="/profile" className="user-info">
             <img
               src={getProfileImage()}
               alt="Profile"
               className="header-profile-photo"
             />
             <span className="user-name">{getUserDisplayName()}</span>
-          </div>
-          <Link to="/profile" className="profile-button">
-            Profil
           </Link>
-          <button onClick={handleLogout} className="logout-button">
-            Déconnexion
-          </button>
+          {location.pathname === "/profile" && (
+            <button onClick={handleLogout} className="logout-button">
+              Déconnexion
+            </button>
+          )}
         </div>
       )}
       {!user && (
